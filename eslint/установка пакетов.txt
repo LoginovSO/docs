@@ -1,0 +1,18 @@
+yarn add --dev eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier prettier
+
+@typescript-eslint/eslint-plugin
+@typescript-eslint/parser
+
+
+Добавляем в package.json
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
+"lint-staged": {
+  "*.ts": [
+    "yarn run lint",
+    "git add"
+  ]
+}
